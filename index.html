@@ -3,23 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="login-container">
         <h1>Welcome Back!</h1>
-        <form action="#" method="post">
+        <form id="login-form">
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <input type="text" id="username" name="username" value="demoUser" placeholder="Enter your username" required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <input type="password" id="password" name="password" value="demoPass123" placeholder="Enter your password" required>
+            </div>
+            <div class="confirmation">
+                <p>Are you sure you want to log in?</p>
+                <button type="button" class="yes-btn" onclick="handleYesClick()">Yes</button>
+                <button type="button" class="no-btn" onclick="handleNoClick()">No</button>
             </div>
             <button type="submit" class="login-btn">Login</button>
         </form>
     </div>
+
+    <script>
+        function handleYesClick() {
+            document.getElementById('login-form').submit();
+        }
+
+        function handleNoClick() {
+            alert('Login canceled.');
+        }
+    </script>
 </body>
 </html>
